@@ -28,9 +28,13 @@ namespace UnitTestProject4
 
         private bool Validator107(string content)
         {
+            return GetWhiteList().Contains(content);
+        }
+
+        private static IEnumerable<string> GetWhiteList()
+        {
             var numberList = Enumerable.Range(1, 14).Except(new[] { 2, 12 });
-            var whiteList = numberList.Select(x => x.ToString()).Concat(new[] { "2a", "2b", "99" });
-            return whiteList.Contains(content);
+            return numberList.Select(x => x.ToString()).Concat(new[] { "2a", "2b", "99" });
         }
 
         private bool Validator106(string content)
