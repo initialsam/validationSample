@@ -29,7 +29,7 @@ namespace UnitTestProject4
         private bool Validator107(string content)
         {
             var numberList = Enumerable.Range(1, 14).Except(new[] { 2, 12 });
-            var whiteList = numberList.Select(x => x.ToString()).Concat(new string[] { "2a", "2b", "99" });
+            var whiteList = numberList.Select(x => x.ToString()).Concat(new[] { "2a", "2b", "99" });
             return whiteList.Contains(content);
         }
 
